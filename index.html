@@ -3,6 +3,7 @@
 <head>
   <script src="angular.min.js"></script>
   <script src="js/controllers.js"></script>
+  <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
 <body ng-controller="PhoneListCtrl">
@@ -15,5 +16,37 @@
  {{3 + 4}}
  {{val}}
   <button ng-click="inc()">click me</button>
+  <h1 ng-show="isEven()">Even</h1>
+  <h1 ng-hide="isEven()">Odd</h1>
+
+  <h1 ng-show="even">Even</h1>
+  <h1 ng-hide="even">Odd</h1>
+
+ <div ng-repeat="i in myarr track by $index">
+   <li>
+      {{i}}::{{$index}}
+     <div ng-show="$last">last</div>
+     <div ng-show="$first">first</div>
+     <div ng-show="$middle">middle</div>
+     <div ng-show="$even">even</div>
+     <div ng-show="$odd">odd</div>
+
+   </li>
+ </div>
+
+  <div ng-repeat="user in users">
+    <li>
+      {{user.name}}
+    </li>
+  </div>
+
+  <div ng-repeat="attr in obj">
+    <li>
+      {{attr}}
+    </li>
+  </div>
+
+<h1 ng-class="classVar"> NG CLASS</h1>
+
 </body>
 </html>
