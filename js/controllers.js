@@ -22,4 +22,17 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     $scope.obj = {name:'name1',age:'age1',title:'Mr.'}
 
     $scope.classVar = 'orange'
+    $scope.myVal = {data:'initialData'}
+    //alert('Hi');
+    $scope.$watch('myVal.data',function(newval){
+       $scope.myVal.checkLength = newval.length > 15
+    })
+});
+
+phonecatApp.controller('SubPhoneListCtrl', function ($scope) {
+
+});
+
+phonecatApp.controller('SubSubPhoneListCtrl', function ($scope) {
+
 });

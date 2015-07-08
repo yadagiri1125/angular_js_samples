@@ -3,10 +3,13 @@
 <head>
   <script src="angular.min.js"></script>
   <script src="js/controllers.js"></script>
+    <script type="text/ng-template" id="test.html">
+       <h1> this text is from templates</h1>
+    </script>
   <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
-<body ng-controller="PhoneListCtrl">
+<div ng-controller="PhoneListCtrl">
   <ul>
     <li ng-repeat="phone in phones">
       <span>{{phone.name}}</span>
@@ -46,7 +49,26 @@
     </li>
   </div>
 
-<h1 ng-class="classVar"> NG CLASS</h1>
+  <h1 ng-class="classVar"> NG CLASS</h1>
+  <h1 ng-class="{orange:true, italic:true}"> NG CLASS</h1>
 
+  <div ng-include="'test.html'">
+
+  </div>
+        <div ng-controller="SubPhoneListCtrl">
+            <input ng-model="mydata">
+            <button ng-click="mydata=123"></button>
+            {{mydata}}
+
+                <div ng-controller="SubSubPhoneListCtrl">
+                    <input ng-model="mydata">
+                    <button ng-click="mydata=123"></button>
+                    {{mydata}}
+                </div>
+        </div>
+<input ng-model="myVal.data">
+{{myVal.data}}
+<span ng-show="myVal.checkLength">the data is too long max is 15 characters</span>
+</div>
 </body>
 </html>
